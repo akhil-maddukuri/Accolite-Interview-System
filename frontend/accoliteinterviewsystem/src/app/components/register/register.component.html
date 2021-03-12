@@ -1,0 +1,115 @@
+<body>
+
+    <div class="container">
+        <div class="row py-5 mt-4 align-items-center">
+
+            <div class="col-md-5 pr-lg-5 mb-4 mb-md-0 brand">
+                <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt=""
+                    class="img-fluid mb-3 d-none d-md-block">
+                <h1>Create an Account</h1>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form [formGroup]="RegisterFormGroup" (ngSubmit)="Submit()">
+                    <div class="row">
+
+                        <!-- Candidate ID -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input id="id" type="text" formControlName="id" placeholder="Enter your ID"
+                                class="form-control bg-white border-md" style="padding-left: 20px; border-radius: 5px;">
+                        </div>
+
+                        <!-- Full Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input id="full name" type="text" formControlName="name" placeholder="Enter your Name"
+                                class="form-control bg-white border-md" style="padding-left: 20px; border-radius: 5px;">
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input id="email" type="email" formControlName="email" placeholder="Email Address"
+                                class="form-control bg-white border-md" style="padding-left: 20px; border-radius: 5px;">
+                        </div>
+
+                        <!-- Password -->
+                        <div class=" input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input id="password" type="password" formControlName="password" placeholder="Password"
+                                class="form-control bg-white border-md" style="padding-left: 20px; border-radius: 5px;">
+                        </div>
+
+
+                        <!-- type -->
+                        <div class=" input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input id="type" type="text" formControlName="type" value="Candidate"
+                                placeholder="Candidate" class="form-control bg-white border-md"
+                                style="padding-left: 20px; border-radius: 5px;" readonly>
+                        </div>
+
+
+                        <!-- Resume Link -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input id="resume_link" type="text" formControlName="resumelink"
+                                placeholder="Enter your Resume Link" class="form-control bg-white border-md pl-3"
+                                style="padding-left: 20px; border-radius: 5px;">
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button type="submit" class="btn btn-primary font-weight-bold btn-block py-2">Create your
+                                account</button>
+                        </div>
+
+                        <!-- Divider Text -->
+                        <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                            <div class="border-bottom w-100 ml-5"></div>
+                            <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                            <div class="border-bottom w-100 mr-5"></div>
+                        </div>
+
+
+                        <!-- Already Registered -->
+                        <div class="text-center w-100">
+                            <p class="text-muted font-weight-bold">Already Registered? <a routerLink="/login"
+                                    class="text-primary ml-2">Login</a></p>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // For Demo Purpose [Changing input group text on focus]
+    $(function () {
+        $('input, select').on('focus', function () {
+            $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+        });
+        $('input, select').on('blur', function () {
+            $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+        });
+    });
+
+</script>

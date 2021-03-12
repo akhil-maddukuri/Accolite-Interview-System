@@ -1,0 +1,126 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-md-4 jobscard">
+            <div class="card-body jobs">
+                <h2>Jobs</h2>
+                <button class="btn btn-success createbtn" routerLink="/hr/addjob">Create Job</button>
+                <br>
+                <button class="btn showbtn" routerLink="/hr/showjobs">Show Jobs</button>
+            </div>
+        </div>
+
+        <div class="card col-md-4 interviewerscard">
+            <div class="card-body">
+                <h2>List of Interviewers</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of (data$|async)">
+                            <td>{{user.id}}</td>
+                            <td>{{user.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card col-md-4 candidatescard">
+            <div class="card-body">
+                <h2>List of Candidates</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of (dataC$|async)">
+                            <td>{{user.id}}</td>
+                            <td>{{user.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron col-md-10 interviewsch">
+    <div>
+        <form [formGroup]="InterviewFormGroup" (ngSubmit)="Submit()">
+            <h2>Schedule an Interview</h2>
+            <br>
+            <div class="form-group">
+                <label>Interview ID</label>
+
+                <input type="text" formControlName="interview_id" class="form-control" placeholder="Enter Interview ID">
+                <span class="text-muted">Example: INT05</span>
+            </div>
+            <div class="form-group">
+                <label>Candidate Name</label>
+                <select class="form-control" formControlName="candidate_name">
+                    <option>Select a Candidate Name</option>
+                    <option *ngFor="let user of (dataC$|async)">{{user.name}}</option>
+                </select>
+                <!-- <input type="text" formControlName="candidate_id" class="form-control" placeholder="Enter Candidate ID"> -->
+            </div>
+            <div class="form-group">
+                <label>Interviewer Name</label>
+                <select class="form-control" formControlName="interviewer_name">
+                    <option>Select an Interviewer Name</option>
+                    <option *ngFor="let user of (data$|async)">{{user.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>HR ID</label>
+
+                <input type="text" formControlName="hr_id" class="form-control" placeholder="Enter HR ID">
+            </div>
+            <div class="form-group">
+                <label>Google Meet Link</label>
+                <input type="text" formControlName="gmeetlink" class="form-control" placeholder="Google Meet Link">
+            </div>
+
+            <div class="form-group">
+                <label>Date of Interview</label>
+                <input type="date" formControlName="date" class="form-control" placeholder="Date of Interview">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="jumbotron bg-light col-md-12 interviewslist">
+    <div class="card-body">
+        <h1 id="#interviewlist">List of Interviews</h1>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Interview ID</th>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">Interviewer Name</th>
+                    <th scope="col">Date of Interview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let interview of (dataI$|async)">
+                    <td scope="row">{{interview.interview_id}}</td>
+                    <td>{{interview.candidate_name}}</td>
+                    <td>{{interview.interviewer_name}}</td>
+                    <td>{{interview.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

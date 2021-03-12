@@ -1,0 +1,32 @@
+<body>
+    <div class="container" style="margin-top:50px;">
+
+        <div class="list-group text-uppercase">
+            <div
+                class="list-group-item list-group-item-action font-size:30px text-success my-auto d-flex justify-content-between text-center">
+                <div class="col-md-2">Job Id</div>
+                <div class="col-md-2">Job Title</div>
+                <div class="col-md-2">Description</div>
+                <div class="col-md-2">Location</div>
+                <div class="col-md-2">Eligibility</div>
+                <div class="col-md-2">Actions</div>
+
+            </div>
+            <div *ngFor="let job of (data$|async)"
+                class="list-group-item list-group-item-action font-size:30px text-success my-auto d-flex justify-content-between text-center">
+                <div class="col-md-2">{{job.id}}</div>
+                <div class="col-md-2">{{job.title}}</div>
+                <div class="col-md-2">{{job.description}}</div>
+                <div class="col-md-2">{{job.location}}</div>
+                <div class="col-md-2">{{job.eligibility}}</div>
+                <div class="col-md-2">
+                    <button class="btn btn-info updatebtn">Update</button>
+                    <!--(click)="updatejob(job)" -->
+                    <button class="btn btn-danger deletebtn" (click)="del(job.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-primary addjob" routerLink="/hr/addjob">Add New Job</button>
+</body>

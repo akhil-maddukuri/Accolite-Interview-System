@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>Welcome!</h1>
+        <p>See what's in store for you today...</p>
+    </div>
+    <div class="container">
+        <h1>Interviews</h1>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Interview ID</th>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">HR ID</th>
+                    <th scope="col">Date of Interview</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let interview of (data$|async)">
+                    <td scope=" row">{{interview.interview_id}}</td>
+                    <td scope="row">{{interview.candidate_name}}</td>
+                    <td scope="row">{{interview.hr_id}}</td>
+                    <td scope="row">{{interview.date}}</td>
+                    <td scope="row"><button class="btn fbbtn">Update
+                            Feedback</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

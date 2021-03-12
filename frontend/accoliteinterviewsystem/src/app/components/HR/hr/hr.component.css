@@ -1,0 +1,35 @@
+.jobscard {
+  text-align: center;
+}
+
+.createbtn {
+  margin-bottom: 1%;
+}
+
+.showbtn {
+  background-color: #ff8914;
+}
+
+.interviewerscard {
+  text-align: center;
+}
+.candidatescard {
+  text-align: center;
+}
+
+.interviewsch {
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.interviewsch h2 {
+  text-align: center;
+}
+
+.interviewslist {
+  text-align: center;
+}
+
+.jobs {
+  align-content: center;
+}

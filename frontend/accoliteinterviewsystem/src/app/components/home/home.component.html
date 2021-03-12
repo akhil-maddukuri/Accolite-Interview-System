@@ -1,0 +1,104 @@
+<body>
+    <section id="ourculturesection">
+        <h1 id="ourcultureheader">Our Culture</h1>
+        <div class="container culturediv">
+            <h5>
+                People rarely succeed unless they have fun in what they are doing " -- Dale Carnegie.
+            </h5>
+            <p>At Accolite we strongly believe in working hard & delivering results. At the same time we understand it’s
+                equally important to make your workplace a fun place. So we at Accolite work HARD have FUN & make a
+                DIFFERENCE.</p>
+        </div>
+        <br>
+        <div class="culturevideo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SnMA4UAk-sw" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen id="CultureVideo"></iframe>
+        </div>
+        <br>
+        <br>
+
+
+    </section>
+
+
+    <section id="whyjoinsection">
+
+        <h1 id="whyjoinheader">Why Join us?</h1>
+        <div class="container whyjoindiv">
+            <p>Accolite employees hail from top schools globally and/or have worked at world class organizations. Every
+                Accolite employee has cleared through a very tough interviewing and recruiting process. Typically 3 in
+                every
+                100 applicants clear our interview bar and we take pride in hiring "Only the Best". An opportunity to
+                work
+                with some of the best minds is the biggest perk at Accolite in addition to some of the most challenging
+                and
+                exciting projects.</p>
+            <p>In addition, Accolite provides you ample opportunities to learn new technologies across various domains.
+                We
+                not only identify and harnesses your potential, but also rewards and recognize your talent and
+                performance
+                with industry leading pay scales, benefits, learning opportunities and above all a lot of fun.</p>
+            <br>
+        </div>
+        <div class="introvideo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ikurOQKuOXs?rel=0" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen id="IntroVideo"></iframe>
+        </div>
+    </section>
+
+
+    <section id="benefitssection">
+        <h1 id="benefitsheader">Our Benefits</h1>
+        <div class="container  benefitsdiv">
+            <h3>Accolite offers a wide range of benefits well beyond the competitive salaries we offer. Benefits vary
+                from
+                office to office.</h3>
+            <p>Accolite offers a wide range of benefits well beyond the competitive salaries we offer. Benefits vary
+                from
+                office to office. No matter where they’re based or what their role is, everyone at Accolite is a valued
+                member of a global team that works together to provide best IT services.</p>
+
+            <p>Our U.S. office benefits include health care plans that include an option to opt for Medical, Dental,
+                Vision
+                coverages as well as an employee assistance program. Associates also have an option to a health savings
+                account which requires enrollment into a high deductible health plan. In addition, associates can also
+                utilize 401K pre-tax plan or 401K Roth post-tax plan and free financial investment assistance services
+                administered through a third party.</p>
+
+            <p>Our India office benefits include an employee bonus scheme based on performance, health care assistance
+                and
+                ample opportunities for professional development.</p>
+        </div>
+        <div class="benefitsvideo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oUs3XjhzXn0" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen="" id="benefitsvideo"></iframe>
+        </div>
+        <br>
+        <br>
+        <br>
+    </section>
+
+    <section id="jobssection">
+        <h1 id="jobsheader">Job Openings</h1>
+        <div class="jumbotron">
+            <h2 class="text-center">List of Jobs</h2>
+            <br>
+            <table class="center table">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Eligibility</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                <tr *ngFor="let job of (data$|async)">
+                    <td scope="row">{{job.title}}</td>
+                    <td>{{job.description}}</td>
+                    <td>{{job.location}}</td>
+                    <td>{{job.eligibility}}</td>
+                    <td><button class="btn" style="background:#FF8914;" routerLink="/applyjob">Apply</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</body>

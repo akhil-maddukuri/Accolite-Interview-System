@@ -1,0 +1,11 @@
+body {
+  min-height: 100%;
+  margin-bottom: 30%;
+}
+.addjob {
+  margin-left: 45%;
+  margin-right: 45%;
+}
+.updatebtn {
+  margin-bottom: 3%;
+}

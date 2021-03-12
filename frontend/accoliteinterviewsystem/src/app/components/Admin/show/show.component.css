@@ -1,0 +1,7 @@
+body {
+  min-height: 100%;
+  margin-bottom: 30%;
+}
+button {
+  display: inline-flex;
+}

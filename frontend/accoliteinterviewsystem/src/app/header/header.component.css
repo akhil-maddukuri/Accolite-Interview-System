@@ -1,0 +1,17 @@
+.header {
+  background-color: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.header a {
+  color: rgba(245, 245, 245, 0.6);
+  transition: ease-in-out color 0.15s;
+}
+.header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-image {
+  width: 40%;
+}

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="apply">
+
+        <h1 style="text-align: center;"> List of Jobs</h1>
+        <br>
+        <table class="center table">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Location</th>
+                <th scope="col">Eligibility</th>
+                <th scope="col">Actions</th>
+            </tr>
+            <tr *ngFor="let job of (data$|async)">
+
+                <td scope="row">{{job.id}}</td>
+                <td>{{job.title}}</td>
+                <td>{{job.description}}</td>
+                <td>{{job.location}}</td>
+                <td>{{job.eligibility}}</td>
+            </tr>
+        </table>
+
+
+
+        <h1 style="text-align: center;">Apply for a Job </h1>
+        <form [formGroup]="ApplyJobFormGroup" (ngSubmit)="Submit()">
+            <div class="form-group">
+                <select class="form-control" formControlName="jobid">
+                    <option>Select a Job ID</option>
+                    <option *ngFor="let job of (data$|async)">{{job.id}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" formControlName="title">
+                    <option>Select the title</option>
+                    <option *ngFor="let job of (data$|async)">{{job.title}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="candidateid" placeholder="Enter your ID">
+            </div>
+            <button type="submit" [disabled]="ApplyJobFormGroup.invalid"
+                class="btn btn-primary submitbtn">Submit</button>
+        </form>
+    </div>
+</div>
